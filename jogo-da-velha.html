@@ -72,9 +72,119 @@
       $("form")[0].reset();
     });
 
-    $("input").input(function() {
-      console.log($("#position1").val())
+    $("input").keyup(function() {
+    	var text = $(this).val();
+    	
+    	//Permite apenas os caracteres X e O
+    	if (text != "x") {
+    		if (text != "o") {
+    			$(this).val("");
+    		}
+    	}
+
+    	verifyWinner();
     });
   });
+
+  function verifyWinner() {
+
+  	verifyRows();
+  	verifyColumns();
+  	verifyDiagonal();
+
+  }
+
+  function verifyRows() {
+  	var position1 = $("#position1").val();
+  	var position2 = $("#position2").val();
+  	var position3 = $("#position3").val();
+  	var position4 = $("#position4").val();
+  	var position5 = $("#position5").val();
+  	var position6 = $("#position6").val();
+  	var position7 = $("#position7").val();
+  	var position8 = $("#position8").val();
+  	var position9 = $("#position9").val();
+
+  	if (position1 != "" || position2 != "" || position3 != "" ) {
+  		if (position1 == position2 && position3 == position2) {
+	  		console.log(position1 + " ganhou!");
+	  		$("form")[0].reset();
+	  	}
+  	}
+
+  	if (position4 != "" || position5 != "" || position6 != "" ) {
+  		if (position4 == position5 && position6 == position5) {
+	  		console.log(position4 + " ganhou!");
+	  		$("form")[0].reset();
+	  	}
+  	}
+
+  	if (position7 != "" || position8 != "" || position9 != "" ) {
+  		if (position7 == position8 && position9 == position8) {
+	  		console.log(position1 + " ganhou!");
+	  		$("form")[0].reset();
+	  	}
+  	}
+  }
+
+  function verifyColumns() {
+	var position1 = $("#position1").val();
+  	var position2 = $("#position2").val();
+  	var position3 = $("#position3").val();
+  	var position4 = $("#position4").val();
+  	var position5 = $("#position5").val();
+  	var position6 = $("#position6").val();
+  	var position7 = $("#position7").val();
+  	var position8 = $("#position8").val();
+  	var position9 = $("#position9").val();
+
+  	if (position1 != "" || position4 != "" || position7 != "" ) {
+  		if (position1 == position4 && position7 == position4) {
+	  		console.log(position1 + " ganhou!");
+	  		$("form")[0].reset();
+	  	}
+  	}
+
+  	if (position2 != "" || position5 != "" || position8 != "" ) {
+  		if (position2 == position5 && position8 == position5) {
+	  		console.log(position2 + " ganhou!");
+	  		$("form")[0].reset();
+	  	}
+  	}
+
+  	if (position3 != "" || position6 != "" || position9 != "" ) {
+  		if (position3 == position6 && position9 == position6) {
+	  		console.log(position3 + " ganhou!");
+	  		$("form")[0].reset();
+	  	}
+  	}
+  }
+
+  function verifyDiagonal() {
+	var position1 = $("#position1").val();
+  	var position2 = $("#position2").val();
+  	var position3 = $("#position3").val();
+  	var position4 = $("#position4").val();
+  	var position5 = $("#position5").val();
+  	var position6 = $("#position6").val();
+  	var position7 = $("#position7").val();
+  	var position8 = $("#position8").val();
+  	var position9 = $("#position9").val();
+
+  	if (position1 != "" || position5 != "" || position9 != "" ) {
+  		if (position1 == position5 && position9 == position5) {
+	  		console.log(position1 + " ganhou!");
+	  		$("form")[0].reset();
+	  	}
+  	}
+
+  	if (position3 != "" || position5 != "" || position7 != "" ) {
+  		if (position3 == position5 && position7 == position5) {
+	  		console.log(position3 + " ganhou!");
+	  		$("form")[0].reset();
+	  	}
+  	}
+
+  }
 </script>
 </html>
