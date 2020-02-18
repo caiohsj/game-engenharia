@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>Jogo da Velha</title>
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+
+  <div class="container">
+    <form>
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="flex-item bloco">
+        
+          <input type="text" id="position1" maxlength="1">
+        </div>
+        <div class="flex-item bloco">
+          
+          <input type="text" id="position2" maxlength="1">
+        </div>
+        <div class="flex-item bloco">
+          
+          <input type="text" id="position3" maxlength="1">
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="flex-item bloco">
+          
+          <input type="text" id="position4" maxlength="1">
+        </div>
+        <div class="flex-item bloco">
+          
+          <input type="text" id="position5" maxlength="1">
+        </div>
+        <div class="flex-item bloco">
+          
+          <input type="text" id="position6" maxlength="1">
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="flex-item bloco">
+          
+          <input type="text" id="position7" maxlength="1">
+        </div>
+        <div class="flex-item bloco">
+          
+          <input type="text" id="position8" maxlength="1">
+        </div>
+        <div class="flex-item bloco">
+          
+          <input type="text" id="position9" maxlength="1">
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="d-flex justify-content-center align-items-center">
+    <button href="#" class="btn btn-reset">Resetar</button>
+  </div>
+  
+</body>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+  $(function() {
+    $("button").click(function() {
+      $("form")[0].reset();
+    });
+
+    $("input").input(function() {
+      console.log($("#position1").val())
+    });
+  });
+</script>
+</html>
